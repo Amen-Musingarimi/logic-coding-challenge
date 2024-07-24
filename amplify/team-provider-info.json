@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-logiccodingchallenge-dev-d8a0d-unauthRole",
       "StackName": "amplify-logiccodingchallenge-dev-d8a0d",
       "StackId": "arn:aws:cloudformation:eu-north-1:649688185658:stack/amplify-logiccodingchallenge-dev-d8a0d/fb8331e0-49a7-11ef-85ed-0ea78ca3d538",
-      "AmplifyAppId": "d2oowzf0efdavt"
+      "AmplifyAppId": "d2oowzf0efdavt",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-logiccodingchallenge-dev-d8a0d-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "function": {
@@ -17,6 +18,12 @@
           "deploymentBucketName": "amplify-logiccodingchallenge-dev-d8a0d-deployment",
           "s3Key": "amplify-builds/honoProxyFunction-4a3531514b683659364c-build.zip"
         }
+      },
+      "auth": {
+        "logiccodingchallenge": {}
+      },
+      "api": {
+        "authapi": {}
       }
     }
   }
