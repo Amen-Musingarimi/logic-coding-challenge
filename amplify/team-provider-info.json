@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-logiccodingchallenge-dev-d8a0d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::649688185658:role/amplify-logiccodingchallenge-dev-d8a0d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::649688185658:role/amplify-logiccodingchallenge-dev-d8a0d-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-logiccodingchallenge-dev-d8a0d-deployment",
+      "UnauthRoleName": "amplify-logiccodingchallenge-dev-d8a0d-unauthRole",
+      "StackName": "amplify-logiccodingchallenge-dev-d8a0d",
+      "StackId": "arn:aws:cloudformation:eu-north-1:649688185658:stack/amplify-logiccodingchallenge-dev-d8a0d/fb8331e0-49a7-11ef-85ed-0ea78ca3d538",
+      "AmplifyAppId": "d2oowzf0efdavt"
+    }
+  }
+}
