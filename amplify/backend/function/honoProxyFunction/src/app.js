@@ -2,11 +2,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { Hono } = require('hono');
 const jwt = require('jsonwebtoken');
-const { serveStatic } = require('hono/bun');
 
 const app = new Hono();
-
-app.use('*', serveStatic({ root: './dist' }));
 
 app.post('/login', async (c) => {
   const { username, password } = await c.req.json();

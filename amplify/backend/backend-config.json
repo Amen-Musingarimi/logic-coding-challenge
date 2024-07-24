@@ -1,4 +1,20 @@
 {
+  "api": {
+    "apilogin": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "honoProxyFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "function": {
     "honoProxyFunction": {
       "build": true,

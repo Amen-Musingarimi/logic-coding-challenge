@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
+const awsServerlessExpress = require('aws-serverless-express');
 const app = require('./app');
 
-exports.handler = async (event) => {
-  const { default: awsLambda } = require('aws-lambda');
-  return awsLambda.handler(event, app.fetch.bind(app));
+const server = awsServerlessExpress.createServer(app.fetch.bind(app));
+
+exports.handler = (event, context) => {
+  console.log(`EVENT: ${JSON.stringify(event)}`);
+  return awsServerlessExpress.proxy(server, event, context);
 };
