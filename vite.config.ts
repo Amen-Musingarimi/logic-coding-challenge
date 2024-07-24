@@ -5,7 +5,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://789tp00z47.execute-api.eu-north-1.amazonaws.com/dev',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

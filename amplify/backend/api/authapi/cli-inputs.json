@@ -5,13 +5,7 @@
       "name": "/login",
       "lambdaFunction": "honoProxyFunction",
       "permissions": {
-        "setting": "private",
-        "auth": [
-          "create",
-          "read",
-          "update",
-          "delete"
-        ]
+        "setting": "open"
       }
     }
   }
