@@ -1,6 +1,6 @@
-import { Hono } from 'hono';
-import jwt from 'jsonwebtoken';
-import { serveStatic } from 'hono/bun';
+const { Hono } = require('hono');
+const jwt = require('jsonwebtoken');
+const { serveStatic } = require('hono/bun');
 
 const app = new Hono();
 
@@ -53,8 +53,8 @@ app.post('/login', async (c) => {
     return c.json({ message: 'Login success', user: userData }, 200);
   } catch (error) {
     console.log(error.message);
-    return c.json({ message: 'Internal Server Error' }, 500);
+    return c.json({ message: 'Internal Server Error!!!' }, 500);
   }
 });
 
-export default app;
+module.exports = app;

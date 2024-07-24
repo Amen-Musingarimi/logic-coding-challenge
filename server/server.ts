@@ -57,7 +57,10 @@ app.post('/login', async (c) => {
     );
   } catch (error) {
     console.log(error.message);
-    return c.json({ message: 'Internal Server Error' }, 500 as StatusCode);
+    return c.json(
+      { message: 'Oops, Internal Server Error' },
+      500 as StatusCode
+    );
   }
 });
 
