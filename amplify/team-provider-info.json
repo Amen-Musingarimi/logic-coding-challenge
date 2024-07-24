@@ -24,6 +24,12 @@
       },
       "api": {
         "authapi": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2oowzf0efdavt",
+          "type": "manual"
+        }
       }
     }
   }
