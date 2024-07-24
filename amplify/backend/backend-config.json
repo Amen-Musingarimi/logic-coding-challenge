@@ -1,1 +1,27 @@
-{}
+{
+  "function": {
+    "honoProxyFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_honoProxyFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "honoProxyFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_honoProxyFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "honoProxyFunction"
+        }
+      ]
+    }
+  }
+}
