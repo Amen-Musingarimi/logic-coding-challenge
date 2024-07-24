@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { Hono } = require('hono');
 const jwt = require('jsonwebtoken');
 const { serveStatic } = require('hono/bun');

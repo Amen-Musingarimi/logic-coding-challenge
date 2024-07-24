@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "logiccodingchallengeLambdaRoleceae3834",
+            "logiccodingchallengeLambdaRole731eb521",
             {
               "Fn::Join": [
                 "",
                 [
-                  "logiccodingchallengeLambdaRoleceae3834",
+                  "logiccodingchallengeLambdaRole731eb521",
                   "-",
                   {
                     "Ref": "env"
