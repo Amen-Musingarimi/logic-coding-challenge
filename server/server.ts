@@ -1,11 +1,8 @@
 import { Hono } from 'hono';
 import jwt from 'jsonwebtoken';
 import { StatusCode } from 'hono/utils/http-status';
-import { serveStatic } from 'hono/bun';
 
 const app = new Hono();
-
-app.use('*', serveStatic({ root: './dist' }));
 
 app.post('/login', async (c) => {
   const { username, password } = await c.req.json();
