@@ -23,8 +23,12 @@ const Login: React.FC = () => {
       });
 
       const { body } = await response.response;
-      const result: LoginResponse = await body.json();
-      console.log(result);
+      const result = (await body.json()) as LoginResponse | null;
+
+      if (!result) {
+        setError('Invalid response from server');
+        return;
+      }
 
       if (result.error) {
         setError(result.error.message || 'Failed to login');
@@ -33,7 +37,6 @@ const Login: React.FC = () => {
 
       const { user } = result;
 
-      console.log(user);
       localStorage.setItem('user', user);
       navigate('/user-details');
     } catch (error) {
