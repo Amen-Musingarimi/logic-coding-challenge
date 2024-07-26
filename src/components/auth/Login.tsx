@@ -37,7 +37,11 @@ const Login: React.FC = () => {
       localStorage.setItem('user', user);
       navigate('/user-details');
     } catch (error) {
-      setError(error.message || 'Failed to login');
+      if (error instanceof Error) {
+        setError(error.message || 'Failed to login');
+      } else {
+        setError('An unknown error occurred');
+      }
     }
   };
 
