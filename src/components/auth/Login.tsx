@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { post } from 'aws-amplify/api';
+import { LoginResponse } from './types';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -22,7 +23,8 @@ const Login: React.FC = () => {
       });
 
       const { body } = await response.response;
-      const result = await body.json();
+      const result: LoginResponse = await body.json();
+      console.log(result);
 
       if (result.error) {
         setError(result.error.message || 'Failed to login');
