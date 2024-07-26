@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { post } from 'aws-amplify/api';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -7,30 +8,34 @@ const Login: React.FC = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
     try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await post({
+        apiName: 'apilogin',
+        path: '/login',
+        options: {
+          body: { username, password },
         },
-        body: JSON.stringify({ username, password }),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        setError(errorData.message || 'Failed to login');
+      const { body } = await response.response;
+      const result = await body.json();
+
+      if (result.error) {
+        setError(result.error.message || 'Failed to login');
         return;
       }
 
-      const data = await response.json();
-      localStorage.setItem('user', data.user);
+      const { user } = result;
+
+      console.log(user);
+      localStorage.setItem('user', user);
       navigate('/user-details');
     } catch (error) {
-      setError('Failed to login. Please try again later.');
+      setError(error.message || 'Failed to login');
     }
   };
 
