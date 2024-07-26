@@ -5,6 +5,14 @@ const jwt = require('jsonwebtoken');
 
 const app = new Hono();
 
+app.use('*', (c, next) => {
+  c.header('Access-Control-Allow-Origin', '*');
+  c.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  c.header('Access-Control-Allow-Methods', 'OPTIONS, POST, GET');
+
+  return next();
+});
+
 app.post('/login', async (c) => {
   const { username, password } = await c.req.json();
 

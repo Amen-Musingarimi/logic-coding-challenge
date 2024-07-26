@@ -15,7 +15,7 @@
       "function": {
         "honoProxyFunction": {
           "deploymentBucketName": "amplify-logiccodingchallenge-dev-03d41-deployment",
-          "s3Key": "amplify-builds/honoProxyFunction-746b4948395176557176-build.zip"
+          "s3Key": "amplify-builds/honoProxyFunction-594d2f68694461567649-build.zip"
         }
       },
       "api": {
